@@ -29,4 +29,10 @@ MOCK_EMAILS = [
         "subject": "Feature request: dark mode",
         "body": "Could you add a dark mode? It would really help at night.",
     },
+    {
+        "id": "email_006",
+        "from": "customer6@example.com",
+        "subject": "Refund request",
+        "body": "I bought this product 90 days ago and want a refund.",
+    },
 ]
