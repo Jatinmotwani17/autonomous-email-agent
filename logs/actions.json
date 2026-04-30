@@ -1,0 +1,526 @@
+[
+  {
+    "action_id": "ACT-a4811866",
+    "logged_at": "2026-04-30T07:37:13.504838+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_001",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Policy allows refunds within 60 days or specifies refund eligibility. Customer provided an order id. Policy and order information indicate eligibility.",
+        "actions": [
+          "process_refund",
+          "send_confirmation_email",
+          "log_action"
+        ],
+        "confidence": 0.8
+      }
+    }
+  },
+  {
+    "action_id": "ACT-398e157a",
+    "logged_at": "2026-04-30T07:37:13.785135+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_002",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Password/technical issue - provide reset and create ticket.",
+        "actions": [
+          "send_password_reset_link",
+          "create_support_ticket",
+          "log_action"
+        ],
+        "confidence": 0.95
+      }
+    }
+  },
+  {
+    "action_id": "ACT-6c59dbad",
+    "logged_at": "2026-04-30T07:37:14.024410+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_003",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Cancellation policy allows cancel; active subscription likely.",
+        "actions": [
+          "process_cancellation",
+          "process_refund_if_applicable",
+          "send_confirmation_email",
+          "log_action"
+        ],
+        "confidence": 0.8
+      }
+    }
+  },
+  {
+    "action_id": "ACT-551bf7df",
+    "logged_at": "2026-04-30T07:37:14.315662+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_004",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Support request - create ticket and acknowledge customer.",
+        "actions": [
+          "create_support_ticket",
+          "assign_priority",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.9
+      }
+    }
+  },
+  {
+    "action_id": "ACT-7f2b5565",
+    "logged_at": "2026-04-30T07:37:14.609268+00:00",
+    "data": {
+      "action": "log_feature_request",
+      "email_id": "email_005",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      }
+    }
+  },
+  {
+    "action_id": "ACT-3871f23e",
+    "logged_at": "2026-04-30T07:37:14.629002+00:00",
+    "data": {
+      "action": "add_to_backlog",
+      "email_id": "email_005",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      }
+    }
+  },
+  {
+    "action_id": "ACT-1b604c7c",
+    "logged_at": "2026-04-30T07:37:14.651246+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_005",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      }
+    }
+  },
+  {
+    "action_id": "ACT-c3eab172",
+    "logged_at": "2026-04-30T08:22:50.093578+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_001",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Policy allows refunds within 60 days or specifies refund eligibility. Customer provided an order id. Policy and order information indicate eligibility.",
+        "actions": [
+          "process_refund",
+          "send_confirmation_email",
+          "log_action"
+        ],
+        "confidence": 0.8
+      }
+    }
+  },
+  {
+    "action_id": "ACT-1175d6a1",
+    "logged_at": "2026-04-30T08:22:50.427652+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_002",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Password/technical issue - provide reset and create ticket.",
+        "actions": [
+          "send_password_reset_link",
+          "create_support_ticket",
+          "log_action"
+        ],
+        "confidence": 0.95
+      }
+    }
+  },
+  {
+    "action_id": "ACT-e890150e",
+    "logged_at": "2026-04-30T08:22:50.740832+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_003",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Cancellation policy allows cancel; active subscription likely.",
+        "actions": [
+          "process_cancellation",
+          "process_refund_if_applicable",
+          "send_confirmation_email",
+          "log_action"
+        ],
+        "confidence": 0.8
+      }
+    }
+  },
+  {
+    "action_id": "ACT-8d229740",
+    "logged_at": "2026-04-30T08:22:51.054498+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_004",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Support request - create ticket and acknowledge customer.",
+        "actions": [
+          "create_support_ticket",
+          "assign_priority",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.9
+      }
+    }
+  },
+  {
+    "action_id": "ACT-1d46e56a",
+    "logged_at": "2026-04-30T08:22:51.341868+00:00",
+    "data": {
+      "action": "log_feature_request",
+      "email_id": "email_005",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      }
+    }
+  },
+  {
+    "action_id": "ACT-f43ea0e2",
+    "logged_at": "2026-04-30T08:22:51.356771+00:00",
+    "data": {
+      "action": "add_to_backlog",
+      "email_id": "email_005",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      }
+    }
+  },
+  {
+    "action_id": "ACT-ec224514",
+    "logged_at": "2026-04-30T08:22:51.367798+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_005",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      }
+    }
+  },
+  {
+    "action_id": "ACT-6eabb05e",
+    "logged_at": "2026-04-30T08:35:55.543466+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_001",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Policy allows refunds within 60 days or specifies refund eligibility. Customer provided an order id. Policy and order information indicate eligibility.",
+        "actions": [
+          "process_refund",
+          "send_confirmation_email",
+          "log_action"
+        ],
+        "confidence": 0.8
+      }
+    }
+  },
+  {
+    "action_id": "ACT-8d37488b",
+    "logged_at": "2026-04-30T08:35:56.764418+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_002",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Password/technical issue - provide reset and create ticket.",
+        "actions": [
+          "send_password_reset_link",
+          "create_support_ticket",
+          "log_action"
+        ],
+        "confidence": 0.95
+      }
+    }
+  },
+  {
+    "action_id": "ACT-c8adf804",
+    "logged_at": "2026-04-30T08:35:58.082385+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_003",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Cancellation policy allows cancel; active subscription likely.",
+        "actions": [
+          "process_cancellation",
+          "process_refund_if_applicable",
+          "send_confirmation_email",
+          "log_action"
+        ],
+        "confidence": 0.8
+      }
+    }
+  },
+  {
+    "action_id": "ACT-2900352e",
+    "logged_at": "2026-04-30T08:35:59.159071+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_004",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Support request - create ticket and acknowledge customer.",
+        "actions": [
+          "create_support_ticket",
+          "assign_priority",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.9
+      }
+    }
+  },
+  {
+    "action_id": "ACT-b467386e",
+    "logged_at": "2026-04-30T08:36:00.359121+00:00",
+    "data": {
+      "action": "log_feature_request",
+      "email_id": "email_005",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      }
+    }
+  },
+  {
+    "action_id": "ACT-a156425e",
+    "logged_at": "2026-04-30T08:36:00.373424+00:00",
+    "data": {
+      "action": "add_to_backlog",
+      "email_id": "email_005",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      }
+    }
+  },
+  {
+    "action_id": "ACT-a5a6abee",
+    "logged_at": "2026-04-30T08:36:00.391580+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_005",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      }
+    }
+  },
+  {
+    "action_id": "ACT-e15ab707",
+    "logged_at": "2026-04-30T08:38:23.894753+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_001",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Policy allows refunds within 60 days or specifies refund eligibility. Customer provided an order id. Policy and order information indicate eligibility.",
+        "actions": [
+          "process_refund",
+          "send_confirmation_email",
+          "log_action"
+        ],
+        "confidence": 0.8
+      }
+    }
+  },
+  {
+    "action_id": "ACT-2aaaa09d",
+    "logged_at": "2026-04-30T08:38:24.109554+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_002",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Password/technical issue - provide reset and create ticket.",
+        "actions": [
+          "send_password_reset_link",
+          "create_support_ticket",
+          "log_action"
+        ],
+        "confidence": 0.95
+      }
+    }
+  },
+  {
+    "action_id": "ACT-a9ca9b31",
+    "logged_at": "2026-04-30T08:38:24.365879+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_003",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Cancellation policy allows cancel; active subscription likely.",
+        "actions": [
+          "process_cancellation",
+          "process_refund_if_applicable",
+          "send_confirmation_email",
+          "log_action"
+        ],
+        "confidence": 0.8
+      }
+    }
+  },
+  {
+    "action_id": "ACT-54a8a8aa",
+    "logged_at": "2026-04-30T08:38:24.584986+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_004",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Support request - create ticket and acknowledge customer.",
+        "actions": [
+          "create_support_ticket",
+          "assign_priority",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.9
+      }
+    }
+  },
+  {
+    "action_id": "ACT-eedffb94",
+    "logged_at": "2026-04-30T08:38:24.879826+00:00",
+    "data": {
+      "action": "log_feature_request",
+      "email_id": "email_005",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      }
+    }
+  },
+  {
+    "action_id": "ACT-b4735f78",
+    "logged_at": "2026-04-30T08:38:24.893083+00:00",
+    "data": {
+      "action": "add_to_backlog",
+      "email_id": "email_005",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      }
+    }
+  },
+  {
+    "action_id": "ACT-bd5e5090",
+    "logged_at": "2026-04-30T08:38:24.915610+00:00",
+    "data": {
+      "action": "log_action",
+      "email_id": "email_005",
+      "plan": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      }
+    }
+  }
+]

@@ -1,0 +1,571 @@
+{
+  "total_emails_processed": 5,
+  "successful": 5,
+  "failed": 0,
+  "decisions": {
+    "APPROVE": 5,
+    "DENY": 0,
+    "ESCALATE": 0
+  },
+  "actions_executed": {
+    "process_refund": 1,
+    "send_confirmation_email": 2,
+    "log_action": 5,
+    "send_password_reset_link": 1,
+    "create_support_ticket": 2,
+    "process_cancellation": 1,
+    "process_refund_if_applicable": 1,
+    "assign_priority": 1,
+    "send_acknowledgement_email": 2,
+    "log_feature_request": 1,
+    "add_to_backlog": 1
+  },
+  "execution_times": {
+    "classify": "0.0s",
+    "retrieve": "1.2s",
+    "decide": "0.0s",
+    "execute": "0.0s"
+  },
+  "vector_db_performance": {
+    "total_queries": 5,
+    "avg_similarity": 0.04,
+    "top_3_docs_retrieved": 15
+  },
+  "emails_processed": [
+    {
+      "id": 1,
+      "sender": "customer1@example.com",
+      "intent": "REFUND",
+      "decision": "APPROVE",
+      "actions_count": 3,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 2,
+      "sender": "customer2@example.com",
+      "intent": "PASSWORD",
+      "decision": "APPROVE",
+      "actions_count": 3,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 3,
+      "sender": "customer3@example.com",
+      "intent": "CANCEL",
+      "decision": "APPROVE",
+      "actions_count": 4,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 4,
+      "sender": "customer4@example.com",
+      "intent": "SUPPORT",
+      "decision": "APPROVE",
+      "actions_count": 4,
+      "status": "SUCCESS"
+    },
+    {
+      "id": 5,
+      "sender": "customer5@example.com",
+      "intent": "FEATURE",
+      "decision": "APPROVE",
+      "actions_count": 4,
+      "status": "SUCCESS"
+    }
+  ],
+  "full_results": [
+    {
+      "raw_email": {
+        "id": "email_001",
+        "from": "customer1@example.com",
+        "subject": "Need refund for recent purchase",
+        "body": "I bought a headset 2 weeks ago and I want to return it for a refund. Order #A123."
+      },
+      "classification": {
+        "intent": "REFUND",
+        "priority": "LOW",
+        "customer_email": "customer1@example.com",
+        "key_details": {
+          "order_id": "A123",
+          "product": "headset"
+        },
+        "source": "heuristic"
+      },
+      "retrieval": [
+        {
+          "id": "refund_policy_window",
+          "text": "Refund policy allows refunds within 60 days from purchase date.",
+          "metadata": {
+            "category": "refund"
+          },
+          "distance": 1.0680485963821411,
+          "score": 0.0
+        },
+        {
+          "id": "refund_eligibility",
+          "text": "Refund eligibility requires product to be unused and in original packaging.",
+          "metadata": {
+            "category": "refund"
+          },
+          "distance": 1.1002392768859863,
+          "score": 0.0
+        },
+        {
+          "id": "refund_processing_time",
+          "text": "Approved refunds are processed in 3 to 5 business days.",
+          "metadata": {
+            "category": "refund"
+          },
+          "distance": 1.2011038064956665,
+          "score": 0.0
+        }
+      ],
+      "decision": {
+        "decision": "APPROVE",
+        "reasoning": "Policy allows refunds within 60 days or specifies refund eligibility. Customer provided an order id. Policy and order information indicate eligibility.",
+        "actions": [
+          "process_refund",
+          "send_confirmation_email",
+          "log_action"
+        ],
+        "confidence": 0.8
+      },
+      "execution": {
+        "email_id": "email_001",
+        "actions_executed": [
+          {
+            "action": "process_refund",
+            "status": "SUCCESS",
+            "result": {
+              "refund_id": "REF-58c64c15",
+              "status": "SUCCESS",
+              "amount": 29.99,
+              "timestamp": "2026-04-30T08:38:23.894043+00:00",
+              "customer_id": "customer1@example.com"
+            }
+          },
+          {
+            "action": "send_confirmation_email",
+            "status": "SUCCESS",
+            "result": {
+              "email_id": "EMAIL-98a87b63",
+              "status": "SUCCESS",
+              "sent_to": "customer1@example.com",
+              "subject": "Need refund for recent purchase",
+              "timestamp": "2026-04-30T08:38:23.894068+00:00"
+            }
+          },
+          {
+            "action": "log_action",
+            "status": "SUCCESS",
+            "result": {
+              "logged_at": "2026-04-30T08:38:23.894753+00:00",
+              "action_id": "ACT-e15ab707"
+            }
+          }
+        ],
+        "overall_status": "SUCCESS",
+        "errors": []
+      }
+    },
+    {
+      "raw_email": {
+        "id": "email_002",
+        "from": "customer2@example.com",
+        "subject": "Cannot log in",
+        "body": "I forgot my password. Please help me reset it."
+      },
+      "classification": {
+        "intent": "PASSWORD",
+        "priority": "MEDIUM",
+        "customer_email": "customer2@example.com",
+        "key_details": {},
+        "source": "heuristic"
+      },
+      "retrieval": [
+        {
+          "id": "password_reset",
+          "text": "Password reset requires sending a secure reset link to the account email.",
+          "metadata": {
+            "category": "password_reset"
+          },
+          "distance": 0.8796830177307129,
+          "score": 0.12031698226928711
+        },
+        {
+          "id": "cancellation_policy",
+          "text": "Customers can cancel subscription anytime from account settings.",
+          "metadata": {
+            "category": "cancellation"
+          },
+          "distance": 1.7526981830596924,
+          "score": 0.0
+        },
+        {
+          "id": "feature_request_process",
+          "text": "Feature requests are logged in backlog and reviewed quarterly.",
+          "metadata": {
+            "category": "feature_request"
+          },
+          "distance": 1.8417155742645264,
+          "score": 0.0
+        }
+      ],
+      "decision": {
+        "decision": "APPROVE",
+        "reasoning": "Password/technical issue - provide reset and create ticket.",
+        "actions": [
+          "send_password_reset_link",
+          "create_support_ticket",
+          "log_action"
+        ],
+        "confidence": 0.95
+      },
+      "execution": {
+        "email_id": "email_002",
+        "actions_executed": [
+          {
+            "action": "send_password_reset_link",
+            "status": "SUCCESS",
+            "result": {
+              "reset_token": "RST-342c8e3a93",
+              "status": "SUCCESS",
+              "sent_to": "customer2@example.com",
+              "timestamp": "2026-04-30T08:38:24.109078+00:00"
+            }
+          },
+          {
+            "action": "create_support_ticket",
+            "status": "SUCCESS",
+            "result": {
+              "ticket_id": "TCK-ae8bdfee",
+              "status": "SUCCESS",
+              "priority": "MEDIUM",
+              "issue": "Password/technical issue - provide reset and create ticket.",
+              "timestamp": "2026-04-30T08:38:24.109097+00:00",
+              "customer_id": "customer2@example.com"
+            }
+          },
+          {
+            "action": "log_action",
+            "status": "SUCCESS",
+            "result": {
+              "logged_at": "2026-04-30T08:38:24.109554+00:00",
+              "action_id": "ACT-2aaaa09d"
+            }
+          }
+        ],
+        "overall_status": "SUCCESS",
+        "errors": []
+      }
+    },
+    {
+      "raw_email": {
+        "id": "email_003",
+        "from": "customer3@example.com",
+        "subject": "Please cancel my subscription",
+        "body": "I want to cancel my subscription effective immediately. My account email is customer3@example.com."
+      },
+      "classification": {
+        "intent": "CANCEL",
+        "priority": "HIGH",
+        "customer_email": "customer3@example.com",
+        "key_details": {
+          "product": "subscription"
+        },
+        "source": "heuristic"
+      },
+      "retrieval": [
+        {
+          "id": "cancellation_policy",
+          "text": "Customers can cancel subscription anytime from account settings.",
+          "metadata": {
+            "category": "cancellation"
+          },
+          "distance": 0.5656617879867554,
+          "score": 0.43433821201324463
+        },
+        {
+          "id": "password_reset",
+          "text": "Password reset requires sending a secure reset link to the account email.",
+          "metadata": {
+            "category": "password_reset"
+          },
+          "distance": 1.362825870513916,
+          "score": 0.0
+        },
+        {
+          "id": "support_sla",
+          "text": "Support tickets receive first response within 24 hours.",
+          "metadata": {
+            "category": "support"
+          },
+          "distance": 1.4006482362747192,
+          "score": 0.0
+        }
+      ],
+      "decision": {
+        "decision": "APPROVE",
+        "reasoning": "Cancellation policy allows cancel; active subscription likely.",
+        "actions": [
+          "process_cancellation",
+          "process_refund_if_applicable",
+          "send_confirmation_email",
+          "log_action"
+        ],
+        "confidence": 0.8
+      },
+      "execution": {
+        "email_id": "email_003",
+        "actions_executed": [
+          {
+            "action": "process_cancellation",
+            "status": "SUCCESS",
+            "result": {
+              "cancellation_id": "CAN-ffaf4366",
+              "status": "SUCCESS",
+              "timestamp": "2026-04-30T08:38:24.365331+00:00",
+              "customer_id": "customer3@example.com"
+            }
+          },
+          {
+            "action": "process_refund_if_applicable",
+            "status": "SUCCESS",
+            "result": {
+              "refund_id": "REF-471f0659",
+              "status": "SUCCESS",
+              "amount": 29.99,
+              "timestamp": "2026-04-30T08:38:24.365353+00:00",
+              "customer_id": "customer3@example.com"
+            }
+          },
+          {
+            "action": "send_confirmation_email",
+            "status": "SUCCESS",
+            "result": {
+              "email_id": "EMAIL-b86a2623",
+              "status": "SUCCESS",
+              "sent_to": "customer3@example.com",
+              "subject": "Please cancel my subscription",
+              "timestamp": "2026-04-30T08:38:24.365359+00:00"
+            }
+          },
+          {
+            "action": "log_action",
+            "status": "SUCCESS",
+            "result": {
+              "logged_at": "2026-04-30T08:38:24.365879+00:00",
+              "action_id": "ACT-a9ca9b31"
+            }
+          }
+        ],
+        "overall_status": "SUCCESS",
+        "errors": []
+      }
+    },
+    {
+      "raw_email": {
+        "id": "email_004",
+        "from": "customer4@example.com",
+        "subject": "Product issue - headset not working",
+        "body": "My headset stopped working after 3 days. Please help fix this issue."
+      },
+      "classification": {
+        "intent": "SUPPORT",
+        "priority": "MEDIUM",
+        "customer_email": "customer4@example.com",
+        "key_details": {
+          "product": "headset"
+        },
+        "source": "heuristic"
+      },
+      "retrieval": [
+        {
+          "id": "support_sla",
+          "text": "Support tickets receive first response within 24 hours.",
+          "metadata": {
+            "category": "support"
+          },
+          "distance": 1.5915312767028809,
+          "score": 0.0
+        },
+        {
+          "id": "refund_policy_window",
+          "text": "Refund policy allows refunds within 60 days from purchase date.",
+          "metadata": {
+            "category": "refund"
+          },
+          "distance": 1.6301099061965942,
+          "score": 0.0
+        },
+        {
+          "id": "refund_eligibility",
+          "text": "Refund eligibility requires product to be unused and in original packaging.",
+          "metadata": {
+            "category": "refund"
+          },
+          "distance": 1.6575829982757568,
+          "score": 0.0
+        }
+      ],
+      "decision": {
+        "decision": "APPROVE",
+        "reasoning": "Support request - create ticket and acknowledge customer.",
+        "actions": [
+          "create_support_ticket",
+          "assign_priority",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.9
+      },
+      "execution": {
+        "email_id": "email_004",
+        "actions_executed": [
+          {
+            "action": "create_support_ticket",
+            "status": "SUCCESS",
+            "result": {
+              "ticket_id": "TCK-f82b6162",
+              "status": "SUCCESS",
+              "priority": "MEDIUM",
+              "issue": "Support request - create ticket and acknowledge customer.",
+              "timestamp": "2026-04-30T08:38:24.584488+00:00",
+              "customer_id": "customer4@example.com"
+            }
+          },
+          {
+            "action": "assign_priority",
+            "status": "SUCCESS",
+            "result": {
+              "ticket_id": "TCK-76763b40",
+              "status": "SUCCESS",
+              "priority": "MEDIUM",
+              "issue": "Support request - create ticket and acknowledge customer.",
+              "timestamp": "2026-04-30T08:38:24.584505+00:00",
+              "customer_id": "customer4@example.com"
+            }
+          },
+          {
+            "action": "send_acknowledgement_email",
+            "status": "SUCCESS",
+            "result": {
+              "email_id": "EMAIL-26a116ac",
+              "status": "SUCCESS",
+              "sent_to": "customer4@example.com",
+              "subject": "Product issue - headset not working",
+              "timestamp": "2026-04-30T08:38:24.584512+00:00"
+            }
+          },
+          {
+            "action": "log_action",
+            "status": "SUCCESS",
+            "result": {
+              "logged_at": "2026-04-30T08:38:24.584986+00:00",
+              "action_id": "ACT-54a8a8aa"
+            }
+          }
+        ],
+        "overall_status": "SUCCESS",
+        "errors": []
+      }
+    },
+    {
+      "raw_email": {
+        "id": "email_005",
+        "from": "customer5@example.com",
+        "subject": "Feature request: dark mode",
+        "body": "Could you add a dark mode? It would really help at night."
+      },
+      "classification": {
+        "intent": "FEATURE",
+        "priority": "LOW",
+        "customer_email": "customer5@example.com",
+        "key_details": {},
+        "source": "heuristic"
+      },
+      "retrieval": [
+        {
+          "id": "feature_request_process",
+          "text": "Feature requests are logged in backlog and reviewed quarterly.",
+          "metadata": {
+            "category": "feature_request"
+          },
+          "distance": 1.6876298189163208,
+          "score": 0.0
+        },
+        {
+          "id": "cancellation_policy",
+          "text": "Customers can cancel subscription anytime from account settings.",
+          "metadata": {
+            "category": "cancellation"
+          },
+          "distance": 1.7985265254974365,
+          "score": 0.0
+        },
+        {
+          "id": "order_tracking",
+          "text": "Order tracking requests should include order id, then share latest shipment status.",
+          "metadata": {
+            "category": "tracking"
+          },
+          "distance": 1.839156150817871,
+          "score": 0.0
+        }
+      ],
+      "decision": {
+        "decision": "APPROVE",
+        "reasoning": "Feature request logged for backlog.",
+        "actions": [
+          "log_feature_request",
+          "add_to_backlog",
+          "send_acknowledgement_email",
+          "log_action"
+        ],
+        "confidence": 0.7
+      },
+      "execution": {
+        "email_id": "email_005",
+        "actions_executed": [
+          {
+            "action": "log_feature_request",
+            "status": "SUCCESS",
+            "result": {
+              "logged_at": "2026-04-30T08:38:24.879826+00:00",
+              "action_id": "ACT-eedffb94"
+            }
+          },
+          {
+            "action": "add_to_backlog",
+            "status": "SUCCESS",
+            "result": {
+              "logged_at": "2026-04-30T08:38:24.893083+00:00",
+              "action_id": "ACT-b4735f78"
+            }
+          },
+          {
+            "action": "send_acknowledgement_email",
+            "status": "SUCCESS",
+            "result": {
+              "email_id": "EMAIL-5616d9df",
+              "status": "SUCCESS",
+              "sent_to": "customer5@example.com",
+              "subject": "Feature request: dark mode",
+              "timestamp": "2026-04-30T08:38:24.894315+00:00"
+            }
+          },
+          {
+            "action": "log_action",
+            "status": "SUCCESS",
+            "result": {
+              "logged_at": "2026-04-30T08:38:24.915610+00:00",
+              "action_id": "ACT-bd5e5090"
+            }
+          }
+        ],
+        "overall_status": "SUCCESS",
+        "errors": []
+      }
+    }
+  ]
+}
